@@ -125,8 +125,7 @@ See the [contracts folder](../contracts/) for full source code and tests.
 
 Join our growing community:
  
-- **X**: [@xyrel](https://x.com/xyrel_Privacy)  
-- **GitHub**: [Report issues](https://github.com/)  
+- **X**: [@xyrel](https://x.com/xyrel_Privacy)    
 
 ## Security & Safety
 
