@@ -34,3 +34,50 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## How It Works
+
+1. You Request a Resource: Tell XYREL what service or API you need access to
+2. XYREL Handles Payment: The agent automatically detects HTTP 402 responses and processes blockchain payments
+3. Instant Access: Once payment is verified, you receive immediate access to the resource
+
+## Use Cases
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Add environment variables based on your .env.example
+4. Deploy
+
+## Environment Variables
+
+Use .env.example as your template and add only what your x402 setup requires (facilitator URL, network settings, spend limits, etc.).
+### x402 Protocol Integration
+To make XYREL actually process payments, you'll need to integrate with the x402 protocol:
+
+1. Implement x402 facilitator endpoints for payment verification
+2. Add blockchain wallet connectivity (Phantom, WalletConnect, MetaMask)
+3. Implement spending limits and transaction monitoring
+4. Connect to x402-compatible services
+
+## Important Disclaimers
+- User Responsibility: Users are responsible for setting appropriate spending limits and monitoring transactions
+- Blockchain Transactions: All blockchain transactions are irreversible
+- Service Trust: Always verify and trust the services you're accessing
+- Beta Software: This is experimental software for demonstration purposes
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+This project is open source and available under the MIT License.
+
+## Tokenomics
+$XYREL Token
+XYREL features a sustainable token economy designed to create value for holders through platform fees and automatic buybacks.
+
+## Resources
+
+- [x402 Protocol Website](https://x402.org)
+- [x402 Documentation](https://x402.gitbook.io/x402)
+- [x402 GitHub](https://github.com/x402)
