@@ -1,4 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# XYREL — Encrypted Asset Vault Website (Next.js + Tailwind)
+
+<p align="center">
+  <strong>YOUR KEY, YOUR ASSETS.</strong><br/>
+  A cyber-teal, security-first marketing site for XYREL: an encrypted platform to manage digital assets privately.
+</p>
+
+<p align="center">
+  <a href="#overview">Overview</a> ·
+  <a href="#tech-stack">Tech Stack</a> ·
+  <a href="#features">Features</a> ·
+  <a href="#sections--routes">Sections & Routes</a> ·
+  <a href="#getting-started">Getting Started</a> ·
+  <a href="#customization">Customization</a> ·
+  <a href="#deployment">Deployment</a>
+</p>
+
+---
+
+## Overview
+
+**XYREL** is a modern, interactive landing website built with **Next.js** and **Tailwind CSS**, designed around a **dark cyber aesthetic** with a single accent palette (cyan/teal). The UI emphasizes:
+
+- High-contrast readability on dark backgrounds
+- Glass surfaces, soft glow accents, and subtle grid/noise layers
+- Micro-interactions (hover lift, glow, underline)
+- Scroll-based reveal (fade in/out) for a more lively experience
+
+This repository contains a complete landing page experience:
+- Hero + CTA + contract copy UX
+- About
+- Features
+- Use Cases
+- Pricing
+- Insights
+- Footer
+
+---
+
+## Tech Stack
+
+- **Next.js (App Router)** — React framework for production
+- **Tailwind CSS** — utility-first styling
+- **IntersectionObserver** — zero-dependency scroll reveal animations
+- **CSS Variables** — centralized theme tokens (colors, backgrounds, glow)
+
+---
+
+## Design System
+
+### Color Palette (XYREL Theme)
+
+**Cyber Teal Accent**
+- Primary: `#45A7A6`
+- Dark Accent (borders/thin elements): `#3B8F8F`
+- Glow Accent: `#6ACCCC`
+
+**Background / Gradients**
+- Solid Black: `#000000`
+- Deep Tint: `#0A0F11`
+- Gradient Transition: `#0D1113`
+- Shadow Background: `#131A1C`
+
+---
+
+## Features
+
+### Interaction & Motion
+
+- Hover lift + glow effects for cards and buttons
+- Animated underline on navigation links
+- Scroll reveal animations (fade in/out + blur reduction) powered by `IntersectionObserver`
+- Parallax-like background movement tied to scroll position (CSS variable driven)
+
+### UI Building Blocks
+
+- **MovingBackground**: layered glow + grid + noise (`pointer-events: none` so it never blocks clicks/hover)
+- **GlassCard**: reusable card style with hover and reveal transitions
+- **SectionTitle**: consistent section headers with kicker badge and accent highlight
+
+### UX Touches
+
+- Contract address copy button with “Copied” feedback state
+- Responsive layout from mobile to desktop
+- Clean content hierarchy and spacing for readability
+
+---
+
+## Sections & Routes
+
+### Sections (single page anchors)
+
+- `#home`
+- `#about`
+- `#features`
+- `#use-cases`
+- `#pricing`
+- `#insights`
+
+### Routes
+
+- `/` — Landing page
+- `/docs` — Optional documentation route (create `app/docs/page.tsx` if needed)
+
+---
+
+## Project Structure
+
+Typical App Router layout:
+
+```bash
+.
+├─ app/
+│  ├─ page.tsx              # main landing page
+│  ├─ globals.css           # Tailwind imports + XYREL theme variables + animations
+│  └─ layout.tsx            # Next layout wrapper
+├─ public/
+│  └─ (optional assets)     # logos, icons, images
+├─ tailwind.config.js
+├─ postcss.config.js
+└─ package.json
 
 ## Getting Started
 
