@@ -2,8 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom global styles optional */
-body {
-  background-color: #0B0E11;
-  color: white;
+:root {
+  --bg-body: #000000;
+  --bg-1: #0A0F11;
+  --bg-2: #0D1113;
+  --bg-3: #131A1C;
+
+  --accent: #45A7A6;       /* teal utama */
+  --accent-2: #3B8F8F;     /* teal lebih gelap */
+  --accent-glow: #6ACCCC;  /* glow halus */
+
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-soft: rgba(148, 163, 184, 0.25);
+
+  --scrollY: 0;
 }
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, var(--bg-1), var(--bg-body) 60%, #000 100%);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* Moving background layers (dipakai oleh komponen BG) */
+.bg-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at top, var(--bg-3), var(--bg-body) 55%, #000 100%);
+}
+.bg-layer {
+  position: absolute;
+  inset: -20%;
+  opacity: 0.8;
+  will-change: transform, opacity;
+}
+.bg-layer.glow {
+  background:
+    radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--accent-glow) 22%, transparent), transparent 60%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.14), transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(129, 140, 248, 0.12), transparent 60%);
+  transform: translate3d(0, calc(var(--scrollY) * -0.05px), 0);
+}
+.bg-layer.grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+  background-size: 90px 90px, 90px 90px;
+  mix-blend-mode: soft-light;
+  opacity: 0.22;
+  transform: translate3d(0, calc(var(--scrollY) * 0.08px), 0);
+}
+.bg-layer.noise {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.20) 0, transparent 55%);
+  background-size: 160px 160px;
+  opacity: 0.12;
+  transform: translate3d(0, calc(var(--scrollY) * -0.15px), 0);
+}
+.bg-fade-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0, var(--bg-body) 75%, #000 100%);
+  z-index: 1;
+}
+
+
+/* Utilities kecil untuk efek interaksi */
+.xyrel-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+.xyrel-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(69,167,166,0.22), 0 0 40px rgba(69,167,166,0.18);
+  border-color: rgba(69,167,166,0.35);
+}
+
+.xyrel-link {
+  position: relative;
+  transition: color 200ms ease;
+}
+.xyrel-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+  transition: width 220ms ease;
+  opacity: 0.8;
+}
+.xyrel-link:hover::after { width: 100%; }
